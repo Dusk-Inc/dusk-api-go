@@ -5,7 +5,8 @@
     "tasks": {
         "build": "go build ./...",
         "test": "go test ./...",
-        "install": "go get github.com/dusk-inc/dusk-ocean/repos/libs/dusk-api-go",
+        "add": "go get github.com/dusk-inc/dusk-ocean/repos/libs/dusk-api-go",
+        "install": "go mod download",
         "uninstall": "go get github.com/dusk-inc/dusk-ocean/repos/libs/dusk-api-go@none"
     }
 }
