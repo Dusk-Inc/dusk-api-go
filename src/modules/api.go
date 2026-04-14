@@ -30,7 +30,7 @@ func NewAppManager(config contracts.AppManagerConfig) *AppManager {
 
 	healthRouter := routes.NewHealthRouter(contracts.HealthRouterConfig{Readiness: config.Readiness})
 	healthRouter.Register(engine)
-	metricsRouter := routes.NewMetricsRouter(contracts.MetricsRouterConfig{})
+	metricsRouter := routes.NewMetricsRouter(contracts.MetricsRouterConfig{Collector: config.Collector})
 	metricsRouter.Register(engine)
 
 	return &AppManager{Engine: engine, Logger: logger, Runtime: NewRuntimeManager(logger)}
